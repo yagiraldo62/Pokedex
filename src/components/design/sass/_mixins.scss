@@ -1,0 +1,57 @@
+@mixin flex($justify-content: flex-start, $align-items: flex-start, $flex-direction: row, $flex-wrap: wrap) {
+	justify-content: $justify-content;
+	align-items: $align-items;
+	flex-direction: $flex-direction;
+	flex-wrap: $flex-wrap;
+	display: flex;
+}
+
+@mixin media($types...) {
+	@each $type in $types {
+		// extra small
+		@if ($type == phone) {
+			@media (max-width: 600px) {
+				@content;
+			}
+		}
+
+		@if ($type == p-tablet) {
+			@media (min-width: 600px) {
+				@content;
+			}
+		}
+
+		@if ($type == l-tablet) {
+			@media (min-width: 768px) {
+				@content;
+			}
+		}
+
+		@if ($type == laptop) {
+			@media (min-width: 992px) {
+				@content;
+			}
+		}
+
+		@if ($type == desktop) {
+			@media (min-width: 1200px) {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin altBgColor($color) {
+	background: linear-gradient(-20deg, lighten($color, 10%), lighten($color, 10%), transparent) !important;
+}
+
+@mixin cardBgColor($color) {
+	background: linear-gradient(to left bottom, lighten($color, 13%), lighten($color, 6%), $color, $color) !important;
+}
+
+@mixin chipColor($color) {
+	color: lighten($color, 40%) !important;
+	border: 1px solid rgba(lighten($color, 40%), 1) !important;
+	font-weight: bold;
+	background: rgba(darken($color, 5%), 0.5) !important;
+}

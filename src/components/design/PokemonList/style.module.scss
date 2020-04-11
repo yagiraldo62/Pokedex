@@ -1,0 +1,16 @@
+@import '../sass/mixins';
+
+.PokemonListContainer {
+	width: 85%;
+	margin: 0 auto;
+	padding-top: 70px;
+
+	@include media(phone) {
+		width: 98%;
+		padding-top: 65px;
+	}
+
+	div {
+		@include flex($justify-content: space-around);
+	}
+}

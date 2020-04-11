@@ -1,0 +1,47 @@
+@import '../../design/sass/mixins';
+$pokeball-size: 50px;
+
+.pokeHeader {
+	background: transparent;
+	margin-bottom: 20px;
+	margin-top: -4px;
+	transform: scaleY(0.9);
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 10;
+
+	.headerContainer {
+		padding-left: 58%;
+		margin-left: -50%;
+		width: 50%;
+		display: flex;
+		align-items: center;
+		background: #e53935;
+		transform: skew(-45deg) scale(1.2);
+		border-radius: 0 4px 8px 0;
+		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+		z-index: 10;
+		height: 60px;
+		@include media(phone) {
+			height: 50px;
+		}
+		h1 {
+			color: #fff;
+			display: inline-block;
+			margin-right: 15px;
+			transform: skew(45deg);
+			@include media(phone) {
+				font-size: 19px;
+				margin-right: 2px;
+			}
+		}
+	}
+
+	.pokeball {
+		transform: skew(45deg) scale(0.8);
+		@include media(phone) {
+			transform: skew(45deg) scale(0.6);
+		}
+	}
+}

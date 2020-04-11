@@ -1,0 +1,21 @@
+import color from 'color';
+export default {
+	grass: '#28b463',
+	poison: '#9c27b0',
+	fire: '#e53935',
+	flying: '#7e57c2',
+	water: '#2196f3',
+	bug: '#fb8c00',
+	normal: '#5d6d7e',
+	electric: '#fbc02d',
+	ground: '#7d6608',
+	fairy: color('#f48fb1').darken(0.2),
+	fighting: '#a93226',
+	psychic: '#ec407a',
+	steel: '#aeb6bf',
+	rock: '#8d6e63',
+	ice: '#5499c7',
+	ghost: '#4a235a',
+	dark: '#2c3e50',
+	dragon: '#3300cc',
+};
