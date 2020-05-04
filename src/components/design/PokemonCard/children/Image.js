@@ -20,6 +20,7 @@ import {
 	altGhost,
 	altDark,
 	altDragon,
+	altFlying,
 } from '../style.module.scss';
 const classes = {
 	altGrass,
@@ -39,6 +40,7 @@ const classes = {
 	altGhost,
 	altDark,
 	altDragon,
+	altFlying,
 };
 const ImageContainer = ({ children }) => <motion.div className={PokemonImgContainer}>{children}</motion.div>;
 export default ({ src, altType }) => (

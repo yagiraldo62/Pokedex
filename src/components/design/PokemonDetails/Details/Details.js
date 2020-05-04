@@ -83,25 +83,7 @@ export default ({ pokemon }) => {
 		<div className={classes.root}>
 			{pokemon && (
 				<div className={classes.demo2}>
-					<StyledTabs
-						value={value}
-						variant="fullWidth"
-						onChange={handleChange}
-						aria-label="styled tabs example"
-					>
-						<StyledTab label="Stats" {...a11yProps(0)} />
-						<StyledTab label="Moves" {...a11yProps(1)} />
-						<StyledTab label="Evolution" {...a11yProps(2)} />
-					</StyledTabs>
-					<TabPanel value={value} index={0} dir={theme.direction}>
-						<Stats pokemon={pokemon} />
-					</TabPanel>
-					<TabPanel value={value} index={1} dir={theme.direction}>
-						Moves
-					</TabPanel>
-					<TabPanel value={value} index={2} dir={theme.direction}>
-						Item Three
-					</TabPanel>
+					<Stats pokemon={pokemon} />
 				</div>
 			)}
 		</div>

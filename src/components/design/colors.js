@@ -9,7 +9,7 @@ export default {
 	normal: '#5d6d7e',
 	electric: '#fbc02d',
 	ground: '#7d6608',
-	fairy: color('#f48fb1').darken(0.2),
+	fairy: color('#f48fb1').darken(0.2).hex(),
 	fighting: '#a93226',
 	psychic: '#ec407a',
 	steel: '#aeb6bf',

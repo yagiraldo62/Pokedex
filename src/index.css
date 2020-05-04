@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+* {
+	font-family: 'Bangers', cursive !important;
+}
+
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
@@ -24,4 +30,8 @@ code {
 }
 *::-webkit-scrollbar {
 	display: none !important;
+}
+
+#root {
+	position: relative;
 }

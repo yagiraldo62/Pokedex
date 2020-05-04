@@ -1,41 +1,81 @@
+@import '../sass/mixins';
+
 .topContainer {
-	background: white;
-	position: fixed;
 	width: 100%;
-	height: 50%;
-	top: -50%;
-	transition: 0.3s all ease-in-out;
-	.topContent {
-		position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: column !important;
+	justify-content: flex-start !important;
+	align-items: center !important;
+	position: relative;
+
+	.textContainer {
 		width: 100%;
-		height: 100%;
-		& > span {
-			flex-direction: row;
-			div {
-				display: flex !important;
-				text-align: center;
-				font-size: 1.2em !important;
+
+		.closeContainer {
+			$p: 1em;
+			position: absolute;
+			display: flex;
+			justify-content: flex-end;
+			width: 100vw;
+			padding-right: $p;
+			padding-top: $p/2;
+		}
+
+		.text {
+			color: white;
+			justify-content: flex-start !important;
+			flex-direction: column !important;
+			padding: 1em;
+
+			span {
+				text-transform: capitalize;
+				font-size: 100px;
+				margin-bottom: 0;
+				width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
+				@include media(p-tablet) {
+					font-size: 75px;
+				}
+
+				@include media(phone) {
+					font-size: 55px;
+				}
 			}
-		}
 
-		.pockemonOrderContainer {
-			color: #fff;
-			font-size: 24px;
-			position: absolute;
-			right: 20px;
-			top: 18%;
-		}
+			h3 {
+				color: white;
+				margin: 0;
+				font-size: 40px;
+			}
 
-		img {
-			position: absolute;
-			width: 200px;
-			bottom: 15px;
-			left: calc(50% - 100px);
+			img {
+				width: 50px;
+				margin-top: 1em;
+				margin-right: 1em;
+			}
 		}
 	}
 }
-.activeTop {
+
+.bottomContainer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column !important;
+	justify-content: flex-start !important;
+	align-items: center !important;
+	position: relative !important;
 	top: 0 !important;
+
+	img {
+		position: absolute;
+		top: -140px;
+		right: 0.5em;
+		width: 250px;
+	}
 }
 
 .bottomContainer {
@@ -53,11 +93,14 @@
 		text-align: center;
 		text-transform: capitalize;
 	}
-}
 
-.activeBottom {
-	top: 45% !important;
-	box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.1) !important;
+	div {
+		width: 80%;
+
+		div {
+			width: 100%;
+		}
+	}
 }
 
 .CloseBtnContainer {
@@ -66,4 +109,44 @@
 	button {
 		color: #fff !important;
 	}
+}
+
+.ContStyle {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	overflow: auto;
+
+	.Cont {
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+}
+
+.TopStyle {
+	position: fixed;
+	width: 100vw;
+	height: 55vh;
+	background: white;
+	top: 0;
+	left: 0;
+	z-index: 20;
+}
+
+.BottomStyle {
+	$radius: 2em;
+	position: absolute;
+	width: 100vw;
+	min-height: 45vh;
+	height: auto;
+	background: #fff;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
 }

@@ -20,11 +20,10 @@ const DetailsWrapper = (props) => {
 	const { pokemon, SetPokemonSpecieData } = props;
 
 	useEffect(() => {
-		(async () => {
+		(() => {
 			if (!pokemon.base_happiness) {
 				const { name } = pokemon;
-				const data = await getPokemonSpecie(pokemon.name);
-				SetPokemonSpecieData({ data, name });
+				getPokemonSpecie(pokemon.name).then((data) => SetPokemonSpecieData({ data, name }));
 			}
 		})();
 	}, []);

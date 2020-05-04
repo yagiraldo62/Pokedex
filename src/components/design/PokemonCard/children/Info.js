@@ -1,50 +1,23 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { motion } from 'framer-motion';
-import Chip from '@material-ui/core/Chip';
-import {
-	pockemonCardChip,
-	pockemonCardChipContainer,
-	grassChip,
-	poisonChip,
-	fireChip,
-	flyingChip,
-	waterChip,
-	bugChip,
-	normalChip,
-	groundChip,
-	electricChip,
-	fairyChip,
-	ghostChip,
-	darkChip,
-	fightingChip,
-	psychicChip,
-	rockChip,
-	steelChip,
-	iceChip,
-	dragonChip,
-} from '../style.module.scss';
+import elements from '../../elements';
+import styled from 'styled-components';
 
-const classes = {
-	grassChip,
-	poisonChip,
-	fireChip,
-	flyingChip,
-	waterChip,
-	bugChip,
-	normalChip,
-	groundChip,
-	electricChip,
-	fairyChip,
-	ghostChip,
-	darkChip,
-	fightingChip,
-	psychicChip,
-	rockChip,
-	steelChip,
-	iceChip,
-	dragonChip,
-};
+const ElementsContainer = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: flex-start !important;
+	padding-left: 1em;
+	padding-top: 0.4em;
+
+	img {
+		width: 2.5em;
+		margin-right: 0.5em;
+		border-radius: 100%;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+	}
+`;
 
 const InfoContainer = ({ children }) => <motion.div>{children}</motion.div>;
 export default ({ name, types, capitalize }) => (
@@ -52,16 +25,10 @@ export default ({ name, types, capitalize }) => (
 		<Typography variant="h5" component="h2">
 			{capitalize(name)}
 		</Typography>
-		<Typography variant="body2" color="textSecondary" component="span" className={pockemonCardChipContainer}>
+		<ElementsContainer>
 			{types.map((type, i) => (
-				<Chip
-					size="small"
-					key={type.type.name + i}
-					variant="outlined"
-					label={capitalize(type.type.name)}
-					className={`${pockemonCardChip} ${classes[type.type.name + 'Chip']}`}
-				/>
+				<img key={i} src={elements[type.type.name]} alt={type.type.name} title={type.type.name} />
 			))}
-		</Typography>
+		</ElementsContainer>
 	</InfoContainer>
 );

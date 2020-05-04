@@ -5,6 +5,10 @@
 	margin: 0 auto;
 	padding-top: 70px;
 
+	h2 {
+		font-size: 30px !important;
+	}
+
 	@include media(phone) {
 		width: 98%;
 		padding-top: 65px;

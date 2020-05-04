@@ -11,7 +11,10 @@ export default (pokemons = localStoragedPokemons, action) => {
 			return pokemons.map((pokemon, i) => {
 				pokemon.active = false;
 				pokemon.stats.map((stat) => {
-					stat.stat.name = stat.stat.name.replace('special', 'sp');
+					stat.stat.name = stat.stat.name
+						.replace('special', 'sp')
+						.replace('attack', 'att')
+						.replace('defense', 'def');
 				});
 				if (i === action.payload) {
 					pokemon.active = true;
