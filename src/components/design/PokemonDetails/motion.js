@@ -11,9 +11,8 @@ export const DetailsContainer = posed.div({
 	},
 	exit: {
 		opacity: 0,
-		afterChildren: true,
 		transition: {
-			duration: 0,
+			duration: 100,
 		},
 	},
 });

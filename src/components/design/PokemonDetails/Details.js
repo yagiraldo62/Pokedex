@@ -10,7 +10,6 @@ export default (props) => {
 	useEffect(() => {
 		if (!top.current) return;
 		top.current.style.background = bg;
-		cont.current.addEventListener('scroll', (e) => cont.current.focus());
 	}, [open, bg]);
 	return (
 		<PoseGroup>
