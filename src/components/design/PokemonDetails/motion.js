@@ -13,8 +13,7 @@ export const DetailsContainer = posed.div({
 		opacity: 0,
 		afterChildren: true,
 		transition: {
-			duration: 300,
-			y: { type: 'spring' },
+			duration: 0,
 		},
 	},
 });
