@@ -6,15 +6,17 @@ import { Top, Bottom, DetailsContainer } from './motion';
 export default (props) => {
 	const { open, types, topCont, bottomCont, bg } = props;
 	const top = useRef();
+	const cont = useRef();
 	useEffect(() => {
 		if (!top.current) return;
 		top.current.style.background = bg;
+		cont.current.addEventListener('scroll', (e) => cont.current.focus());
 	}, [open, bg]);
 	return (
 		<PoseGroup>
 			{open && (
-				<DetailsContainer key="cont" className={ContStyle}>
-					<div className={Cont}>
+				<DetailsContainer ref={cont} key="cont" className={ContStyle}>
+					<div key="cont2" className={Cont}>
 						<Top ref={top} className={TopStyle} key="top" children={topCont} />
 						<Bottom className={BottomStyle} key="bottom" children={bottomCont} />
 					</div>
