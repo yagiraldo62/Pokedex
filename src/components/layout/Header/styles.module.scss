@@ -33,8 +33,20 @@ $pokeball-size: 50px;
 			transform: skew(45deg);
 			font-size: 40px;
 			@include media(phone) {
-				font-size: 19px;
+				font-size: 30px !important;
 				margin-right: 2px;
+			}
+		}
+
+		img {
+			width: 40px;
+			transform: skew(45deg) rotate(-45deg);
+			margin-left: 0.5em;
+			border-radius: 100%;
+			box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+
+			@include media(phone) {
+				width: 30px;
 			}
 		}
 	}
