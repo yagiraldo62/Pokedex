@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import PokemonCard from '../PokemonCard/';
 import PokemonDetails from '../PokemonDetails/';
 import Box from '@material-ui/core/Box';
-import { PokemonListContainer } from './style.module.scss';
+import { PokemonListContainer, LoaderContainer } from './style.module.scss';
 import loader from '../../../assets/img/loader.svg';
+
+const Loader = () => (
+	<div className={LoaderContainer}>
+		<img src={loader} alt="Loading..." />
+	</div>
+);
 export default ({ pokemons, loadMore, offset }) => {
 	const [openDetails, setOpenDetails] = useState(false);
+	const listC = useRef();
 	return (
-		<Box className={PokemonListContainer}>
+		<div className={PokemonListContainer} ref={listC}>
 			<PokemonDetails Open={openDetails} setOpen={setOpenDetails} />
 			<InfiniteScroll
-				hasMore={offset < 50}
-				pageStart={offset}
+				hasMore={offset < 15}
+				pageStart={0}
 				loadMore={loadMore}
-				threshold={400}
-				useWindow={true}
+				useWindow={false}
 				initialLoad={true}
-				// loader={<img src={loader} />}
+				threshold={100}
+				height={1200}
+				loader={<Loader />}
+				useCapture={true}
 			>
 				{pokemons.map((pokemon, i) => (
 					<PokemonCard setOpen={setOpenDetails} pokemon={pokemon} i={i} key={`pokemon${pokemon.name}Card`} />
 				))}
 			</InfiniteScroll>
-		</Box>
+		</div>
 	);
 };
