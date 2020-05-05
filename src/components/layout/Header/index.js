@@ -2,7 +2,7 @@
 import React from 'react';
 import { pokeball, headerContainer, pokeHeader } from './styles.module.scss';
 import Box from '@material-ui/core/Box';
-import Pokeball from '../../../assets/img//pokeball.svg';
+import Pokeball from '../../../assets/img/pokeball.svg';
 export default () => (
 	<Box className={pokeHeader}>
 		<Box className={headerContainer}>

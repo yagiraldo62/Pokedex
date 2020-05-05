@@ -47,7 +47,6 @@ const PokemonDetails = ({ pokemons, Open, setOpen }) => {
 		setBg(BG(types));
 		setPokeNColor(pokeNameColor(types));
 		setSprite(pokemon.sprites.front_default);
-		console.log(pokemon);
 		return () => window.removeEventListener('keydown', escPressListener);
 	}, [pokemons, pokemon]);
 
