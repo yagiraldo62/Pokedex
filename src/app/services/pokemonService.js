@@ -13,6 +13,8 @@ export const getPokemonSpecie = (name) => {
 };
 
 export const getPokemons = async ({ limit, offset }) => {
+	const pokemons = getStorage();
+	if (pokemons && offset === 0) return Promise.resolve(pokemons);
 	return new Promise((resolve, reject) => {
 		Pokedex.getPokemonsList({
 			limit,
@@ -31,7 +33,17 @@ export const getPokemons = async ({ limit, offset }) => {
 					pokemons[i] = { ...pokemons[i], ...data };
 				});
 				resolve(pokemons);
+				if (offset === 0) saveStorage(pokemons);
 			})
 			.catch((err) => reject(err));
 	});
+};
+
+const saveStorage = (data) => {
+	localStorage.setItem('pokemons', JSON.stringify(data));
+};
+
+const getStorage = () => {
+	const pokemons = localStorage.getItem('pokemons');
+	return pokemons ? JSON.parse(pokemons) : null;
 };

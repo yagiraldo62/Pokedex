@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import PokemonCard from '../PokemonCard/';
 import PokemonDetails from '../PokemonDetails/';
@@ -12,9 +12,8 @@ const Loader = () => (
 );
 export default ({ pokemons, loadMore, offset }) => {
 	const [openDetails, setOpenDetails] = useState(false);
-	const listC = useRef();
 	return (
-		<div className={PokemonListContainer} ref={listC}>
+		<div className={PokemonListContainer}>
 			<PokemonDetails Open={openDetails} setOpen={setOpenDetails} />
 			<InfiniteScroll
 				hasMore={offset < 15}
@@ -23,12 +22,16 @@ export default ({ pokemons, loadMore, offset }) => {
 				useWindow={false}
 				initialLoad={true}
 				threshold={100}
-				height={1200}
 				loader={<Loader />}
 				useCapture={true}
 			>
 				{pokemons.map((pokemon, i) => (
-					<PokemonCard setOpen={setOpenDetails} pokemon={pokemon} i={i} key={`pokemon${pokemon.name}Card`} />
+					<PokemonCard
+						setOpen={setOpenDetails}
+						pokemon={pokemon}
+						i={i}
+						key={`pokemon${pokemon.name}Card${i}`}
+					/>
 				))}
 			</InfiniteScroll>
 		</div>
