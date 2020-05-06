@@ -52,14 +52,15 @@ const StyledPokemonCardCont = styled.div`
 `;
 
 export const StyledPokemonCard = (props) => {
+	const { type, children } = props;
 	const bgRef = useRef();
 	useEffect(() => {
-		bgRef.current.style.background = BG(props.type);
-	}, []);
+		bgRef.current.style.background = BG(type);
+	}, [type]);
 	return (
 		<motion.div {...props}>
-			<StyledPokemonCardCont ref={bgRef} type={props.type}>
-				{props.children}
+			<StyledPokemonCardCont ref={bgRef} type={type}>
+				{children}
 			</StyledPokemonCardCont>
 		</motion.div>
 	);

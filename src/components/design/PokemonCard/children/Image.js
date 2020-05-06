@@ -46,6 +46,6 @@ const ImageContainer = ({ children }) => <motion.div className={PokemonImgContai
 export default ({ src, altType }) => (
 	<ImageContainer>
 		<div className={`${decoration} ${classes[altType]}`}></div>
-		<img src={src} />
+		<img src={src} alt="Pokemon Sprite" />
 	</ImageContainer>
 );

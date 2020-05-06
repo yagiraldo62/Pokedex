@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { addPokemons, incPokemonsOffset, setFirstLoading, setCurrentLoading } from '../app/redux/actions';
 import { connect } from 'react-redux';
 import { getPokemons } from '../app/services/pokemonService';

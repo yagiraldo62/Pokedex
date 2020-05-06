@@ -3,8 +3,6 @@ import posed from 'react-pose';
 export const DetailsContainer = posed.div({
 	enter: {
 		opacity: 1,
-		staggerChildren: 50,
-		beforeChildren: true,
 		transition: {
 			duration: 0,
 		},
@@ -12,7 +10,7 @@ export const DetailsContainer = posed.div({
 	exit: {
 		opacity: 0,
 		transition: {
-			duration: 100,
+			duration: 300,
 		},
 	},
 });
@@ -30,8 +28,7 @@ export const Top = posed.div({
 		y: '-100%',
 		opacity: 0,
 		transition: {
-			duration: 300,
-			y: { type: 'spring' },
+			duration: 400,
 		},
 	},
 });
@@ -48,7 +45,7 @@ export const Bottom = posed.div({
 		top: '100%',
 		opacity: 0,
 		transition: {
-			duration: 300,
+			duration: 400,
 		},
 	},
 });

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import PokemonCard from '../PokemonCard/';
 import PokemonDetails from '../PokemonDetails/';
-import Box from '@material-ui/core/Box';
 import { PokemonListContainer, LoaderContainer } from './style.module.scss';
 import loader from '../../../assets/img/loader.svg';
 

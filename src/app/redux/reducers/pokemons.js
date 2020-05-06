@@ -15,6 +15,7 @@ export default (pokemons = localStoragedPokemons, action) => {
 						.replace('special', 'sp')
 						.replace('attack', 'att')
 						.replace('defense', 'def');
+					return stat;
 				});
 				if (i === action.payload) {
 					pokemon.active = true;

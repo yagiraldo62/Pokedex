@@ -48,6 +48,7 @@ const PokemonDetails = ({ pokemons, Open, setOpen }) => {
 		setPokeNColor(pokeNameColor(types));
 		setSprite(pokemon.sprites.front_default);
 		return () => window.removeEventListener('keydown', escPressListener);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pokemons, pokemon]);
 
 	const CloseButton = (
@@ -57,8 +58,8 @@ const PokemonDetails = ({ pokemons, Open, setOpen }) => {
 			</IconButton>
 		</div>
 	);
-	const topContent = <Top imageSrc={sprite} close={CloseButton} pokemon={pokemon} pokeNameColor={pokeNColor} />;
-	const bottomContent = <Bottom imageSrc={sprite} close={CloseButton} pokemon={pokemon} pokeNameColor={pokeNColor} />;
+	const topContent = <Top close={CloseButton} pokemon={pokemon} pokeNameColor={pokeNColor} />;
+	const bottomContent = <Bottom imageSrc={sprite} pokemon={pokemon} />;
 	return (
 		<Details
 			topCont={topContent}

@@ -4,7 +4,7 @@ import { TopStyle, BottomStyle, ContStyle, Cont } from './style.module.scss';
 import { Top, Bottom, DetailsContainer } from './motion';
 
 export default (props) => {
-	const { open, types, topCont, bottomCont, bg } = props;
+	const { open, topCont, bottomCont, bg } = props;
 	const top = useRef();
 	const cont = useRef();
 	useEffect(() => {

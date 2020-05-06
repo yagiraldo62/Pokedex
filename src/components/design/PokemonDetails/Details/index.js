@@ -26,6 +26,7 @@ const DetailsWrapper = (props) => {
 				getPokemonSpecie(pokemon.name).then((data) => SetPokemonSpecieData({ data, name }));
 			}
 		})();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	return <Details {...props} />;
 };
