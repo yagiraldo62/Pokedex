@@ -17,7 +17,7 @@ export default (pokemons = localStoragedPokemons, action) => {
 						.replace('defense', 'def');
 					return stat;
 				});
-				if (i === action.payload) {
+				if (pokemon.name === action.payload) {
 					pokemon.active = true;
 				}
 				return pokemon;

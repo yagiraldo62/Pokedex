@@ -39,3 +39,15 @@ code {
 	height: 100%;
 	width: 100%;
 }
+
+.MuiInput-underline:before {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
+}
+
+.MuiInput-underline:hover:before {
+	border-bottom: 2px solid rgba(255, 255, 255, 0.7) !important;
+}
+
+.MuiInput-underline:after {
+	border-bottom: 2px solid #EC7063 !important;
+}

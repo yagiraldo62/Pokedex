@@ -28,14 +28,14 @@ const capitalize = (str) => {
 };
 
 const PokemonCard = ({ pokemon, i, SetActivePokemon, pokemons, setOpen }) => {
-	const setActivePk = (i) => {
-		SetActivePokemon(i);
+	const setActivePk = (pokemon) => {
+		SetActivePokemon(pokemon);
 		setOpen(true);
 	};
 	const firstType = pokemon.types[1] ? pokemon.types[1].type.name : pokemon.types[0].type.name;
 	const altType = `alt${capitalize(pokemon.types[0].type.name)}`;
 	return (
-		<div className={pokemonCardContainer} onClick={() => setActivePk(i)}>
+		<div className={pokemonCardContainer} onClick={() => setActivePk(pokemon.name)}>
 			<StyledPokemonCard
 				variants={pokemonCardVariants}
 				className={`${pokemonCard} `}

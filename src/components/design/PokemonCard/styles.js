@@ -11,6 +11,7 @@ const StyledPokemonCardCont = styled.div`
 	margin-bottom: 5px;
 	color: white !important;
 	cursor: pointer;
+	
 
 	&:hover {
 		box-shadow: 1px 1px 14px rgba(${color('#000').rgb()}, 0.3);
