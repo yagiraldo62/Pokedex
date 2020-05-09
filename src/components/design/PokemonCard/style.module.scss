@@ -1,6 +1,5 @@
 @import '../sass/mixins';
 .pokemonCardContainer {
-
 	@include media(p-tablet) {
 		width: 49%;
 		min-height: 165px !important;

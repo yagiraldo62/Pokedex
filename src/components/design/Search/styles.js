@@ -9,7 +9,7 @@ export const SearchCont = styled.div`
 	}
 
 	*:not(.MuiInputAdornment-root ){
-		color:#fff;
+		color:#2E4053;
 	}
 
 	div {
@@ -17,6 +17,7 @@ export const SearchCont = styled.div`
 		display: inline-flex;
 		justify-content: flex-end;
 		margin-bottom: 20px;
+		margin-top:1em;
 
 		.Mui-focused{
 			color : #EC7063 !important;
